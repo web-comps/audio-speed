@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="m-custom-audio f-cb">
+        <div class="m-mask"></div>
+        <div class="m-mask-inner"></div>
+        <audio class="m-c-audio f-fl" id="audio" src="https://www.w3school.com.cn/i/song.mp3" controls>
+            Your browser does not support the audio element.
+        </audio>
+        <div class="m-c-extend f-fl">
+            <div class="m-c-extend-item f-fl">
+                <select class="u-select-speed" id="rate">
+                    <option value="2">2.0X</option>
+                    <option value="1.5">1.5X</option>
+                    <option value="1.25">1.25X</option>
+                    <option value="1" selected>倍速</option>
+                    <option value="0.5">0.5X</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>

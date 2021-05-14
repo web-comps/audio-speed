@@ -1,0 +1,103 @@
+// 主颜色
+$main-color: #eee;
+
+$main-height: 54px;
+$real-height: 32px;
+$real-height-inner: 16px;
+
+$main-radius: $main-height / 2;
+$real-radius: $real-height / 2;
+$real-radius-inner: $real-height-inner / 2;
+
+$real-margin: ($main-height - $real-height) / 2; // 11px
+$real-margin-inner: $real-margin + 8px; // 19px
+
+.m-custom-audio {
+  display: inline-block;
+  position: relative;
+  width: auto;
+  height: $main-height;
+  background: $main-color;
+  border-radius: $main-radius;
+
+  .m-mask {
+    position: absolute;
+    width: calc(100% - #{$real-margin} * 2);
+    height: $real-height;
+    top: $real-margin-inner;
+    left: $real-margin;
+    // background: rgba(255, 0, 0, 0.1);
+    border-radius: $real-radius;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .m-mask-inner {
+    position: absolute;
+    width: calc(100% - #{$real-margin-inner} * 2);
+    height: $real-height-inner;
+    top: $real-margin-inner;
+    left: $real-margin-inner;
+    // background: rgba(0, 255, 0, 0.3);
+    border-radius: $real-radius-inner;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .m-c-audio {
+    outline: none;
+  }
+
+  .m-c-extend {
+    height: $real-height;
+    border-radius: $real-radius;
+    margin: $real-margin $real-margin 0 0 - $real-margin;
+    z-index: 1;
+    transform: translateZ(1px);
+
+    .m-c-extend-item {
+      border-radius: $real-radius;
+      height: $real-height;
+      transition: background .3s;
+      &:hover {
+        background: rgba(226, 226, 226, 1);
+      }
+    }
+
+    .u-select-speed {
+      border: 0;
+      border-radius: $real-radius;
+      width: 48px;
+      height: $real-height;
+      background: transparent;
+      text-align: center;
+      text-align-last: center;
+      outline: none;
+      -webkit-appearance: none;
+      font-size: 14px;
+    }
+  }
+}
+
+.f-cb:after {
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  content: ".";
+}
+
+.f-cb {
+  zoom: 1;
+}
+
+.f-fl {
+  float: left;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel {
+  background-color: $main-color;
+  border: 0;
+}
